@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../services/data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'blog-item-details',
@@ -6,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-item-details.component.css']
 })
 export class BlogItemDetailsComponent implements OnInit {
-  image = 'http://osnews.pl/wp-content/uploads/2016/06/it-grafika.jpg';
-  text = 'Tytuł';
+  public image = '';
+  public text: string;
+  public id: number;
 
-  constructor() { }
+  constructor(private dataService: DataService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id: string;
+    this.activatedRoute.paramMap.subscribe(params =>{
+      id = params.get("id");
+    });
+    if(id){
+      this.dataService.getById(id).subscribe(response =>{
+        this.image = response['image'];
+        this.text = response['text'];
+      });
+    } else {
+      this.id = 1;
+    }
   }
 
 }
