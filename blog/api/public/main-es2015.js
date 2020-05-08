@@ -39,6 +39,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_contact_contact_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/contact/contact.component */ "./src/app/components/contact/contact.component.ts");
 /* harmony import */ var _components_blog_item_details_blog_item_details_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/blog-item-details/blog-item-details.component */ "./src/app/components/blog-item-details/blog-item-details.component.ts");
 /* harmony import */ var _components_blog_home_blog_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/blog-home/blog-home.component */ "./src/app/components/blog-home/blog-home.component.ts");
+/* harmony import */ var _components_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/add-post/add-post.component */ "./src/app/components/add-post/add-post.component.ts");
+
 
 
 
@@ -63,6 +65,10 @@ const routes = [
     {
         path: "blog/detail/:id",
         component: _components_blog_item_details_blog_item_details_component__WEBPACK_IMPORTED_MODULE_4__["BlogItemDetailsComponent"],
+    },
+    {
+        path: 'add-post',
+        component: _components_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_6__["AddPostComponent"],
     }
 ];
 class AppRoutingModule {
@@ -152,6 +158,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _directives_text_format_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./directives/text-format.directive */ "./src/app/directives/text-format.directive.ts");
 /* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
 /* harmony import */ var _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/selectize/selectize.component */ "./src/app/components/selectize/selectize.component.ts");
+/* harmony import */ var _components_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/add-post/add-post.component */ "./src/app/components/add-post/add-post.component.ts");
+
 
 
 
@@ -199,7 +207,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _components_blog_home_blog_home_component__WEBPACK_IMPORTED_MODULE_17__["BlogHomeComponent"],
         _directives_text_format_directive__WEBPACK_IMPORTED_MODULE_18__["TextFormatDirective"],
         _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_19__["FilterPipe"],
-        _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_20__["SelectizeComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_20__["SelectizeComponent"],
+        _components_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_21__["AddPostComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"]] }); })();
@@ -221,7 +230,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _components_blog_home_blog_home_component__WEBPACK_IMPORTED_MODULE_17__["BlogHomeComponent"],
                     _directives_text_format_directive__WEBPACK_IMPORTED_MODULE_18__["TextFormatDirective"],
                     _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_19__["FilterPipe"],
-                    _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_20__["SelectizeComponent"]
+                    _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_20__["SelectizeComponent"],
+                    _components_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_21__["AddPostComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -235,6 +245,102 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/components/add-post/add-post.component.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/components/add-post/add-post.component.ts ***!
+  \***********************************************************/
+/*! exports provided: AddPostComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPostComponent", function() { return AddPostComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+
+
+
+
+class AddPostComponent {
+    constructor(dataService, router) {
+        this.dataService = dataService;
+        this.router = router;
+        this.post = {
+            title: '',
+            url: '',
+            content: '',
+        };
+    }
+    ngOnInit() {
+    }
+    save() {
+        this.dataService.createOrUpdate(this.post).subscribe(f => {
+            this.router.navigate(['/blog']);
+        });
+    }
+}
+AddPostComponent.ɵfac = function AddPostComponent_Factory(t) { return new (t || AddPostComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+AddPostComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AddPostComponent, selectors: [["app-add-post"]], decls: 19, vars: 3, consts: [[1, "col-lg-9", "col-md-9", "col-sm-9"], [3, "ngSubmit"], [1, "form-group"], [1, "col-form-label"], ["name", "title", "type", "text", "placeholder", "Wprowad\u017A tytu\u0142", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "url", "type", "text", "placeholder", "URL", 1, "form-control", 3, "ngModel", "ngModelChange"], ["name", "content", "type", "text", "placeholder", "Tre\u015B\u0107", "rows", "10", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group", "button"], ["type", "submit", 1, "btn", "btn-info"]], template: function AddPostComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h4");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Dodaj post:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "form", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function AddPostComponent_Template_form_ngSubmit_3_listener() { return ctx.save(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "label", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Tytu\u0142:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "input", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AddPostComponent_Template_input_ngModelChange_7_listener($event) { return ctx.post.title = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "label", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Adres obrazu:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "input", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AddPostComponent_Template_input_ngModelChange_11_listener($event) { return ctx.post.url = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "label", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Tre\u015B\u0107:");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "textarea", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AddPostComponent_Template_textarea_ngModelChange_15_listener($event) { return ctx.post.content = $event; });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, "Dodaj");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.post.title);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.post.url);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.post.content);
+    } }, directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRkLXBvc3QvYWRkLXBvc3QuY29tcG9uZW50LmNzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AddPostComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-add-post',
+                templateUrl: './add-post.component.html',
+                styleUrls: ['./add-post.component.css']
+            }]
+    }], function () { return [{ type: src_app_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
 
 
 /***/ }),
@@ -995,6 +1101,9 @@ class DataService {
     }
     getByText(data) {
         return this.http.post(this.url + '/api/posts/', data);
+    }
+    createOrUpdate(post) {
+        return this.http.post(`${this.url}/api/posts`, post);
     }
 }
 DataService.ɵfac = function DataService_Factory(t) { return new (t || DataService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
