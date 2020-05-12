@@ -1252,27 +1252,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _blog_item_blog_item_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _blog_item_blog_item_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../blog-item/blog-item.component */
     "./src/app/components/blog-item/blog-item.component.ts");
     /* harmony import */
 
 
-    var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../pipes/filter.pipe */
     "./src/app/pipes/filter.pipe.ts");
 
-    function BlogComponent_div_1_Template(rf, ctx) {
+    function BlogComponent_div_3_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "blog-item", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "blog-item", 2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
@@ -1285,6 +1291,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", item_r1.id)("image", item_r1.image)("text", item_r1.text);
       }
     }
+
+    var _c0 = function _c0() {
+      return ["/add-post"];
+    };
 
     var BlogComponent = /*#__PURE__*/function () {
       function BlogComponent(service) {
@@ -1322,26 +1332,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       inputs: {
         filterText: "filterText"
       },
-      decls: 3,
-      vars: 4,
-      consts: [[4, "ngFor", "ngForOf"], [2, "align-items", "center", "align-self", "center", 3, "id", "image", "text"]],
+      decls: 5,
+      vars: 6,
+      consts: [[3, "routerLink"], [4, "ngFor", "ngForOf"], [2, "align-items", "center", "align-self", "center", 3, "id", "image", "text"]],
       template: function BlogComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "selectize");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, BlogComponent_div_1_Template, 2, 3, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "filter");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Dodaj Posta");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, BlogComponent_div_3_Template, 2, 3, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](4, "filter");
         }
 
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](2, 1, ctx.items$, ctx.filterText));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](5, _c0));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](4, 2, ctx.items$, ctx.filterText));
         }
       },
-      directives: [_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_2__["SelectizeComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _blog_item_blog_item_component__WEBPACK_IMPORTED_MODULE_4__["BlogItemComponent"]],
-      pipes: [_pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_5__["FilterPipe"]],
+      directives: [_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_2__["SelectizeComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _blog_item_blog_item_component__WEBPACK_IMPORTED_MODULE_5__["BlogItemComponent"]],
+      pipes: [_pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_6__["FilterPipe"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYmxvZy9ibG9nLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -2532,7 +2552,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! E:\AngularProjects\TAI\TAI_Angular\TAI_Lab_5\blog\src\main.ts */
+    /*! C:\projects\TAI_Lab_5\blog\src\main.ts */
     "./src/main.ts");
     /***/
   }

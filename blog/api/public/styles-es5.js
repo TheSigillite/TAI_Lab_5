@@ -37,7 +37,7 @@
 
   /***/
   function node_modulesAngularDevkitBuildAngularSrcAngularCliFilesPluginsRawCssLoaderJsNode_modulesPostcssLoaderSrcIndexJsSrcStylesCss(module, exports) {
-    module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RSIsImZpbGUiOiJzcmMvc3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbiJdfQ== */", '', '']];
+    module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9zdHlsZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUE4RSIsImZpbGUiOiJzcmMvc3R5bGVzLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cclxuIl19 */", '', '']];
     /***/
   },
 
@@ -434,15 +434,15 @@
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! E:\AngularProjects\TAI\TAI_Angular\TAI_Lab_5\blog\node_modules\bootstrap\dist\css\bootstrap.css */
+    /*! C:\projects\TAI_Lab_5\blog\node_modules\bootstrap\dist\css\bootstrap.css */
     "./node_modules/bootstrap/dist/css/bootstrap.css");
 
     __webpack_require__(
-    /*! E:\AngularProjects\TAI\TAI_Angular\TAI_Lab_5\blog\node_modules\font-awesome\css\font-awesome.min.css */
+    /*! C:\projects\TAI_Lab_5\blog\node_modules\font-awesome\css\font-awesome.min.css */
     "./node_modules/font-awesome/css/font-awesome.min.css");
 
     module.exports = __webpack_require__(
-    /*! E:\AngularProjects\TAI\TAI_Angular\TAI_Lab_5\blog\src\styles.css */
+    /*! C:\projects\TAI_Lab_5\blog\src\styles.css */
     "./src/styles.css");
     /***/
   }
