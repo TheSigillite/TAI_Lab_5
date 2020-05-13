@@ -641,7 +641,7 @@ function BlogComponent_div_3_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const item_r1 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", item_r1.id)("image", item_r1.image)("text", item_r1.text);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", item_r1.id)("image", item_r1.url)("text", item_r1.content);
 } }
 const _c0 = function () { return ["/add-post"]; };
 class BlogComponent {
