@@ -1099,7 +1099,7 @@ __webpack_require__.r(__webpack_exports__);
 class DataService {
     constructor(http) {
         this.http = http;
-        this.url = 'https://blogtai.herokuapp.com';
+        this.url = 'http://localhost:3000';
     }
     getAll() {
         return this.http.get(this.url + '/api/posts');

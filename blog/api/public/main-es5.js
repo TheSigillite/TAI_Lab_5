@@ -2265,7 +2265,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, DataService);
 
         this.http = http;
-        this.url = 'https://blogtai.herokuapp.com';
+        this.url = 'http://localhost:3000';
       }
 
       _createClass(DataService, [{
