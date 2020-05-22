@@ -9,6 +9,7 @@ const admin = require('../middleware/admin');
 
 const userEndpoint = (router) => {
     router.post('/api/user/auth', async (request, response, next) => {
+        console.log(request.body);
         try {
             let result = await business(request).getUserManager(request).authenticate(request.body.login, request.body.password);
             response.status(200).send(result);
