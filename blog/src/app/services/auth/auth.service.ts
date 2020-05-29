@@ -33,7 +33,7 @@ createOrUpdate(credentials) {
 
 logout() {
    return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
-.pipe(
+   .pipe(
        map(() => {
            localStorage.removeItem('token');
        })
